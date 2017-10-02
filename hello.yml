@@ -1,0 +1,4 @@
+- lineinfile:
+    path: /etc/profile.d/helloworld.sh
+    state: present
+    line: "echo Hello from Ansible"
