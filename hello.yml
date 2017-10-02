@@ -1,4 +1,9 @@
-- lineinfile:
-    path: /etc/profile.d/helloworld.sh
-    state: present
-    line: "echo Hello from Ansible"
+---
+- name: Hello Ansible
+  hosts: all
+  tasks:
+  - name: Hello Ansible
+    - lineinfile:
+      path: /etc/profile.d/helloworld.sh
+      state: present
+      line: "echo Hello from Ansible"
