@@ -2,6 +2,14 @@
 - name: Hello Ansible
   hosts: all
   tasks:
+  - name: Ensure file exists
+    copy:
+        content: ""
+        dest: /etc/profile.d/helloworld.sh
+        force: no
+        group: root
+        owner: root
+        mode: 0644
   - name: Hello Ansible
     lineinfile:
       path: /etc/profile.d/helloworld.sh
