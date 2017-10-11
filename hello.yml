@@ -14,4 +14,4 @@
     lineinfile:
       path: /etc/profile.d/helloworld.sh
       state: present
-      line: "echo Hello from Ansible"
+      line: "echo Hello, {{ foreman_params.owner }} from Ansible"
