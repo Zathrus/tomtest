@@ -2,16 +2,5 @@
 - name: Hello Ansible
   hosts: all
   tasks:
-  - name: Ensure file exists
-    copy:
-        content: ""
-        dest: /etc/profile.d/helloworld.sh
-        force: no
-        group: root
-        owner: root
-        mode: 0644
-  - name: Hello Ansible
-    lineinfile:
-      path: /etc/profile.d/helloworld.sh
-      state: present
-      line: "echo Hello, {{ foreman_params.owner }} from Ansible"
+  - name: MOTD
+    template: src=motd.j2 dest=/etc/motd owner=root mode=0644
